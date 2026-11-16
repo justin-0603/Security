@@ -1,29 +1,29 @@
 # Computer Security Monitor
 
-Windows용 화면·웹캠 캡처 및 관리 도구입니다.
+A Windows utility for capturing and managing desktop screenshots and webcam photos.
 
-## 주요 기능
+## Features
 
-- 시작 시 화면을 캡처하고 웹캠 사진 촬영을 시도합니다.
-- 설정한 프로그램이 실행 중이면 지정한 간격으로 화면을 캡처합니다.
-- Windows 잠금/해제 상태를 감지하며, `Ctrl+Alt+K`로 현재 감시를 중지할 수 있습니다.
-- 제어판에서 감시 대상 프로그램, 캡처 간격, 로그와 캡처 파일을 관리합니다.
-- 필요한 Python 패키지가 없으면 실행 시 `requirements.txt`를 기준으로 자동 설치합니다.
+- Captures the screen and attempts to take a webcam photo when monitoring starts.
+- Captures the screen at a configured interval while a selected application is running.
+- Detects Windows lock and unlock events. Press `Ctrl+Alt+K` to stop the current monitoring session.
+- Includes a control panel for managing monitored applications, capture intervals, logs, and captured files.
+- Installs missing Python packages from `requirements.txt` when the program starts.
 
-> 화면과 웹캠 자료가 저장되므로, 소유하거나 관리 권한이 있는 PC에서 관련 사용자의 동의를 받고 사용하세요.
+> Screen and webcam data is saved locally. Use this tool only on a device you own or are authorized to administer, and with the consent of affected users.
 
-## 사용법
+## Usage
 
-1. Windows에 Python 3을 설치합니다.
-2. `run_control_panel.vbs`를 실행해 감시 대상과 캡처 간격을 설정합니다.
-3. `run_security.vbs`를 실행해 감시를 시작합니다.
+1. Install Python 3 on Windows.
+2. Run `run_control_panel.vbs` to configure monitored applications and the capture interval.
+3. Run `run_security.vbs` to start monitoring.
 
-명령줄에서 실행할 수도 있습니다:
+You can also run the scripts from PowerShell:
 
 ```powershell
 py control_panel.py
-# 다른 PowerShell 창에서 실행
+# Run in a separate PowerShell window
 py capture.py
 ```
 
-캡처 파일과 로그는 `Logs` 폴더에 저장됩니다. 설정은 `config.json`에서 확인할 수 있습니다.
+Captures and logs are saved in the `Logs` folder. Settings are stored in `config.json`.
