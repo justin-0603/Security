@@ -1,40 +1,24 @@
-# Required modules for system operations, time tracking, image processing, process monitoring, and Windows API.
-import cv2
+# Standard library modules.
 import datetime
 import json
 import os
 import sys
 import time
-import subprocess
 import threading
-import win32gui
-import win32ts
-import win32con
 import ctypes
 
-# Check for required libraries and install them if missing silently without spawning console windows.
-def check_and_install_requirements():
-    required_packages = ["cv2", "psutil", "pywin32", "PIL", "mss"]
-    CREATE_NO_WINDOW = 0x08000000
-    
-    for package in required_packages:
-        try:
-            if package == "PIL":
-                import PIL
-            else:
-                __import__(package)
-        except ImportError:
-            pkg_name = "opencv-python" if package == "cv2" else ("pywin32" if package == "pywin32" else ("Pillow" if package == "PIL" else package))
-            subprocess.check_call(
-                [sys.executable, "-m", "pip", "install", pkg_name],
-                creationflags=CREATE_NO_WINDOW
-            )
+# Install dependencies from requirements.txt if any are missing.
+from requirements_setup import ensure_requirements
 
-check_and_install_requirements()
+ensure_requirements()
 
+import cv2
 from PIL import ImageGrab
 import mss
 import psutil
+import win32gui
+import win32ts
+import win32con
 
 # Absolute directory paths relative to this script
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
