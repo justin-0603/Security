@@ -1,0 +1,7 @@
+{
+    "target_apps": [
+        "discord.exe",
+        "chrome.exe"
+    ],
+    "capture_interval_seconds": 5
+}
