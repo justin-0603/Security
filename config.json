@@ -1,7 +1,7 @@
 {
     "target_apps": [
-        "discord.exe",
-        "chrome.exe"
+        "NAME_OF_THE_APP_YOU_WANT_TO_TRIGGER_CAPTURING",
+        "NAME_OF_THE_APP_YOU_WANT_TO_TRIGGER_CAPTURING"
     ],
     "capture_interval_seconds": 5
 }
